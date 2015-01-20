@@ -1,0 +1,20 @@
+Source: ruby-minitest-around
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Balasankar C <balasankarc@autistici.org>
+Build-Depends: debhelper (>= 7.0.50~), gem2deb, rake
+Standards-Version: 3.9.5
+Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-minitest-around.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-ruby-extras/ruby-minitest-around.git;a=summary
+Homepage: https://github.com/splattael/minitest-around
+Testsuite: autopkgtest
+XS-Ruby-Versions: all
+
+Package: ruby-minitest-around
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby | ruby-interpreter
+# minitest (~> 5.0), rdoc (>= 0, development), rake (>= 0, development), bump (>= 0, development)
+Description: Around block for minitest.
+ Alternative for setup/teardown dance.
