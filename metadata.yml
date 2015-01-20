@@ -1,0 +1,117 @@
+--- !ruby/object:Gem::Specification
+name: minitest-around
+version: !ruby/object:Gem::Version
+  version: 0.3.0
+platform: ruby
+authors:
+- Peter Suschlik
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2014-10-13 00:00:00.000000000 Z
+dependencies:
+- !ruby/object:Gem::Dependency
+  name: minitest
+  requirement: !ruby/object:Gem::Requirement
+    requirements:
+    - - "~>"
+      - !ruby/object:Gem::Version
+        version: '5.0'
+  type: :runtime
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    requirements:
+    - - "~>"
+      - !ruby/object:Gem::Version
+        version: '5.0'
+- !ruby/object:Gem::Dependency
+  name: rdoc
+  requirement: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+- !ruby/object:Gem::Dependency
+  name: rake
+  requirement: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+- !ruby/object:Gem::Dependency
+  name: bump
+  requirement: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+description: Alternative for setup/teardown dance.
+email:
+- peter-minitest-around@suschlik.de
+executables: []
+extensions: []
+extra_rdoc_files: []
+files:
+- ".gitignore"
+- ".travis.yml"
+- Gemfile
+- LICENSE
+- README.md
+- Rakefile
+- examples/chdir_spec.rb
+- lib/minitest/around.rb
+- lib/minitest/around/spec.rb
+- lib/minitest/around/unit.rb
+- lib/minitest/around/version.rb
+- minitest-around.gemspec
+- test/around_spec.rb
+- test/around_test.rb
+- test/helper.rb
+- test/nested_spec.rb
+- test/nested_test.rb
+homepage: https://github.com/splattael/minitest-around
+licenses:
+- MIT
+metadata: {}
+post_install_message: 
+rdoc_options: []
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '0'
+required_rubygems_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: 
+rubygems_version: 2.4.2
+signing_key: 
+specification_version: 4
+summary: Around block for minitest.
+test_files: []
