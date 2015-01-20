@@ -1,5 +1,5 @@
-ruby-minitest-around (0.3.0-1) UNRELEASED; urgency=medium
+ruby-minitest-around (0.3.0-1) unstable; urgency=medium
 
-  * Initial release (Closes: #nnnn)
+  * Initial release (Closes: #775829)
 
- -- Balasankar C <balasankarc@autistici.org>  Tue, 20 Jan 2015 19:43:56 +0530
+ -- Balasankar C <balasankarc@autistici.org>  Tue, 20 Jan 2015 18:26:22 +0530
