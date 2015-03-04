@@ -1,4 +1,5 @@
-require 'minitest'
+require 'minitest/test'
+
 require 'minitest/around/version'
 
 Minitest::Test.class_eval do

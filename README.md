@@ -1,14 +1,25 @@
+[github]: https://github.com/splattael/minitest-around
+[doc]: http://rubydoc.info/github/splattael/minitest-around/master/file/README.md
+[gem]: https://rubygems.org/gems/minitest-around
+[travis]: https://travis-ci.org/splattael/minitest-around
+[codeclimate]: https://codeclimate.com/github/splattael/minitest-around
+[inchpages]: https://inch-ci.org/github/splattael/minitest-around
+
 # minitest-around
 
-[![Build Status](https://travis-ci.org/splattael/minitest-around.png)](https://travis-ci.org/splattael/minitest-around) [![Inline docs](http://inch-ci.org/github/splattael/minitest-around.png)](http://inch-ci.org/github/splattael/minitest-around)
+[![Travis](https://img.shields.io/travis/splattael/minitest-around.svg?branch=master)][travis]
+[![Gem Version](https://img.shields.io/gem/v/minitest-around.svg)][gem]
+[![Code Climate](https://img.shields.io/codeclimate/github/splattael/minitest-around.svg)][codeclimate]
+[![Test Coverage](https://codeclimate.com/github/splattael/minitest-around/badges/coverage.svg)][codeclimate]
+[![Inline docs](https://inch-ci.org/github/splattael/minitest-around.svg?branch=master&style=flat)][inchpages]
+
+[Gem][gem] |
+[Source][github] |
+[Documentation][doc]
 
 Around block for minitest 5.X.
 
 Alternative for setup/teardown dance.
-
-[Gem](https://rubygems.org/gems/minitest-around) |
-[Source](https://github.com/splattael/minitest-around) |
-[RDoc](http://rubydoc.info/github/splattael/minitest-around/master/file/README.md)
 
 ## Installation
 
@@ -40,6 +51,7 @@ end
 
 ### Spec
 
+<!-- example -->
 ```Ruby
 require 'minitest/autorun'
 require 'minitest/around/spec'
@@ -48,7 +60,7 @@ require 'tmpdir'
 describe "inside new directory" do
   around do |test|
     Dir.mktmpdir do |dir|
-      $dir = dir
+      @dir = dir
       Dir.chdir(dir) do
         test.call
       end
@@ -56,10 +68,15 @@ describe "inside new directory" do
   end
 
   it "is in new directory" do
-    assert_equal $dir, Dir.pwd
+    assert_equal @dir, Dir.pwd.sub("/private/var/", "/var/")
   end
 end
 ```
+<!-- example -->
+
+## Multiple before/after blocks
+
+Minitest-around also enables the use of multiple before/after blocks, which normally don't work in minitest.
 
 ## Caveats
 
@@ -85,6 +102,7 @@ for `minitest` 4.7.X support.
 ## [Contributors](https://github.com/splattael/minitest-around/graphs/contributors)
 
 * [Michael Grosser](https://github.com/grosser)
+* [Hendra Uzia](https://github.com/hendrauzia)
 * [Rick Martínez](https://github.com/rickmzp)
 * [Philip Nelson](https://github.com/pnelson)
 
@@ -105,5 +123,7 @@ bundle exec rake test
 ## Release
 
 ```Bash
-rake bump:patch && rake release
+edit lib/minitest/around/version.rb
+git commit
+rake release
 ```
